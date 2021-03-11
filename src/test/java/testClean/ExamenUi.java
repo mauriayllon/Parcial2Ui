@@ -30,7 +30,7 @@ public class ExamenUi {
         Assert.assertEquals("ERROR El nombre no se actualizo",name, examenSection.fullNameTextBox2.getAttributeValue("value"));
         Thread.sleep(4000);
         examenSection.logout.click();
-        Assert.assertEquals("ERROR !!Projecto No Creado",true,mainPage.loginImage.controlIsDisplayed());
+        Assert.assertEquals("ERROR Nose Hizo el Logout",true,mainPage.loginImage.controlIsDisplayed());
     }
 
     @After
