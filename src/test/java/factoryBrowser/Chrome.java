@@ -20,4 +20,3 @@ public class Chrome implements IBrowser {
         driver.switchTo().alert().accept();
     }
 }
-

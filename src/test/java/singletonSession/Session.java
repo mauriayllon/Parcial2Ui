@@ -9,12 +9,12 @@ public class Session {
     private WebDriver driver;
 
     private Session(){
-        this.driver=FactoryBrowser.make("chrome").create();
+         this.driver=FactoryBrowser.make("chrome").create();
     }
 
     public static Session getSession(){
         if (session==null)
-            session= new Session();
+           session= new Session();
         return session;
     }
 
@@ -28,4 +28,3 @@ public class Session {
     }
 
 }
-

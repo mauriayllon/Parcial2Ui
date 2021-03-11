@@ -8,4 +8,3 @@ public class FireFox implements IBrowser {
         return null;
     }
 }
-

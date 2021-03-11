@@ -8,5 +8,3 @@ public class Edge implements IBrowser {
         return null;
     }
 }
-
-

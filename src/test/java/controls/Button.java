@@ -7,4 +7,3 @@ public class Button  extends Control{
         super(locator);
     }
 }
-

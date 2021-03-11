@@ -1,4 +1,3 @@
-
 package testClean;
 
 import org.junit.After;
@@ -10,7 +9,7 @@ import pomPages.todoLy.MenuSection;
 import singletonSession.Session;
 
 
-public class LoginTest {
+public class LoginTest extends  TestBaseTodoLy{
 
     MainPage mainPage= new MainPage();
     LoginModal loginModal= new LoginModal();
@@ -18,22 +17,13 @@ public class LoginTest {
     String user="upbui@upbui.com";
     String pwd="1234";
 
-
-
-
     @Test
     public void verify_login_todoly(){
-        Session.getSession().getDriver().get("http://todo.ly/");
         mainPage.loginImage.click();
         loginModal.emailTextBox.set(user);
         loginModal.pwdTextBox.set(pwd);
         loginModal.loginButton.click();
         Assert.assertTrue("ERROR, no se logueo",menuSection.logoutButton.controlIsDisplayed());
-    }
-
-    @After
-    public void close(){
-        Session.getSession().closeSession();
     }
 
 

@@ -7,4 +7,3 @@ public class Label extends Control{
         super(locator);
     }
 }
-

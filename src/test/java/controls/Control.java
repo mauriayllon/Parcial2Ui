@@ -2,10 +2,7 @@ package controls;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import singletonSession.Session;
-
-import java.util.concurrent.TimeUnit;
 
 public class Control {
     protected By locator;
@@ -19,12 +16,6 @@ public class Control {
         this.control= Session.getSession().getDriver().findElement(locator);
     }
 
-    public void acceptAlert(){
-        System.setProperty("webdriver.chrome.driver","src/test/resources/chromeDriver/chromedriver");
-        ChromeDriver driver= new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        driver.switchTo().alert().accept();
-    }
 
     public void click(){
         this.findControl();
@@ -33,12 +24,13 @@ public class Control {
 
     public void set(String value){
         this.findControl();
+        this.control.clear();
         this.control.sendKeys(value);
     }
 
     public void dobleClick(){
-        this.findControl();
-        this.control.click();
+       this.findControl();
+       this.control.click();
         this.control.click();
     }
 
@@ -56,14 +48,8 @@ public class Control {
         return this.control.getText();
     }
 
-    public void clear(){
-        this.findControl();
-        this.control.clear();
-    }
-
     public String getAttributeValue(String attribute){
         this.findControl();
         return this.control.getAttribute(attribute);
     }
 }
-

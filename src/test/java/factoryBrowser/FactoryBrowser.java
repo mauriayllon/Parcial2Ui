@@ -4,7 +4,6 @@ public class FactoryBrowser {
 
     public static IBrowser make(String type){
         IBrowser browser;
-
         switch (type){
             case "chrome":
                 browser=new Chrome();
@@ -15,6 +14,9 @@ public class FactoryBrowser {
             case "edge":
                 browser=new Edge();
                 break;
+            case "cloud":
+                browser=new BrowserStack();
+                break;
             default:
                 browser=new Chrome();
                 break;
@@ -22,4 +24,3 @@ public class FactoryBrowser {
         return  browser;
     }
 }
-

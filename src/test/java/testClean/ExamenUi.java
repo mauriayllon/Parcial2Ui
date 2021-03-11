@@ -6,7 +6,7 @@ import org.junit.Test;
 import pomPages.todoLy.*;
 import singletonSession.Session;
 
-public class Examen {
+public class ExamenUi {
     MainPage mainPage= new MainPage();
     LoginModal loginModal= new LoginModal();
     ExamenSection examenSection = new ExamenSection();
@@ -15,10 +15,11 @@ public class Examen {
 
     @Test
     public void examen() throws InterruptedException {
-        String name="Nuevo Nombre";
+        String name="Mauricio Full Name Cambio";
         Session.getSession().getDriver().get("http://todo.ly/");
         mainPage.loginImage.click();
         loginModal.loginAction(user,pwd);
+
         examenSection.settingsButton.click();
         examenSection.fullNameButton.click();
         examenSection.fullNameButton.set(name);
@@ -34,7 +35,7 @@ public class Examen {
 
     @After
     public void close(){
-        Session.getSession().closeSession();
+       Session.getSession().closeSession();
     }
 
 

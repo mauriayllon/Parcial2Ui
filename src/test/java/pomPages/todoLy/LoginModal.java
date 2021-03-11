@@ -15,8 +15,6 @@ public class LoginModal {
         emailTextBox.set(user);
         pwdTextBox.set(pwd);
         loginButton.click();
-
     }
 
 }
-
